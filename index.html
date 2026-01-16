@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鋁壓鑄HS製程技術</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Roboto+Mono&display=swap');
+
+        :root {
+            --industrial-gray: #2d2d2d;
+            --industrial-blue: #005bb7;
+            --accent-orange: #ff6b00;
+            --accent-yellow: #facc15;
+            --text-light: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #1a1a1a;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin: 0;
+            user-select: none; /* 防止內容被輕易選取 */
+        }
+
+        .industrial-border {
+            border-left: 4px solid var(--industrial-blue);
+        }
+
+        .tech-card {
+            background: #252525;
+            border: 1px solid #333;
+            transition: all 0.3s ease;
+        }
+
+        .tech-card:hover {
+            border-color: var(--industrial-blue);
+            box-shadow: 0 0 15px rgba(0, 91, 183, 0.3);
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .highlight {
+            color: var(--accent-orange);
+            font-weight: bold;
+        }
+
+        .btn-yellow {
+            background-color: var(--accent-yellow);
+            color: #000;
+            transition: background-color 0.2s;
+        }
+
+        .btn-yellow:hover {
+            background-color: #eab308;
+        }
+
+        /* 隱藏滾動條但保留功能 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #444;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--industrial-blue);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <header class="max-w-5xl mx-auto mb-6 border-b border-gray-700 pb-6">
+        <h1 class="text-3xl md:text-4xl font-bold mb-2">鋁壓鑄HS製程技術說明 V2.1</h1>
+    </header>
+
+    <!-- 影片連結按鈕區域 -->
+    <div class="max-w-5xl mx-auto mb-10 flex flex-wrap gap-4">
+        <a href="https://youtu.be/g1LxVWqyIuc" target="_blank" class="btn-yellow inline-flex items-center px-6 py-2 rounded-md font-bold text-sm shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path>
+            </svg>
+            觀看製程影片一
+        </a>
+        <a href="https://youtu.be/Nq10h68UEFE" target="_blank" class="btn-yellow inline-flex items-center px-6 py-2 rounded-md font-bold text-sm shadow-lg">
+            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"></path>
+            </svg>
+            觀看製程影片二
+        </a>
+    </div>
+
+    <main class="max-w-5xl mx-auto">
+        
+        <!-- 製程概述 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-2 h-8 bg-blue-600 mr-3"></span>核心製程階段
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 模具設計 -->
+                <div class="tech-card p-6 rounded-sm">
+                    <h3 class="text-xl font-bold mb-3 industrial-border pl-3">1. 模具設計與流力分析</h3>
+                    <p class="text-sm text-gray-300">
+                        利用 <span class="highlight">CAE 流體分析軟體</span> 進行澆道（Gating System）與排氣設計。針對散熱器細長鰭片（Fins），需特別注意鋁液充填過程中的壓力降，防止末端發生欠鑄（Short Shot）現象。
+                    </p>
+                </div>
+
+                <!-- 熔煉階段 -->
+                <div class="tech-card p-6 rounded-sm">
+                    <h3 class="text-xl font-bold mb-3 industrial-border pl-3">2. 精煉與除氣製程</h3>
+                    <p class="text-sm text-gray-300">
+                        鋁合金（常見如 ADC12, A380）在熔煉時易吸收氫氣。需透過 <span class="highlight">旋轉除氣機 (Degassing)</span> 噴入氬氣或氮氣，並配合除渣劑，確保鋁液純淨度，避免壓鑄後產生內部氣孔。
+                    </p>
+                </div>
+
+                <!-- 壓鑄參數 -->
+                <div class="tech-card p-6 rounded-sm">
+                    <h3 class="text-xl font-bold mb-3 industrial-border pl-3">3. 高壓充填控制</h3>
+                    <p class="text-sm text-gray-300">
+                        採用三段壓射速度控制：低速充填、高速充填（速度可達 4-6 m/s）、增壓階段（Intensification）。高壓（通常高於 80MPa）能確保鰭片細部紋理清晰且組織緻密。
+                    </p>
+                </div>
+
+                <!-- 熱處理與加工 -->
+                <div class="tech-card p-6 rounded-sm">
+                    <h3 class="text-xl font-bold mb-3 industrial-border pl-3">4. 後處理與 CNC 精修</h3>
+                    <p class="text-sm text-gray-300">
+                        散熱面需經過 <span class="highlight">CNC 銑削</span> 以確保平面度（Flatness），提升與電子元件間的接觸效率。後續通常搭配震動研磨或噴砂處理。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技術重點表格 -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold mb-6 flex items-center">
+                <span class="w-2 h-8 bg-orange-600 mr-3"></span>關鍵技術指標
+            </h2>
+            <div class="overflow-x-auto border border-gray-700">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-zinc-800">
+                            <th class="p-4 border-b border-gray-700">控制項目</th>
+                            <th class="p-4 border-b border-gray-700">技術要求</th>
+                            <th class="p-4 border-b border-gray-700">目的</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">模具溫度控制</td>
+                            <td class="p-4">180°C - 240°C</td>
+                            <td>維持鋁液流動性，防止冷隔</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">鰭片拔模角</td>
+                            <td class="p-4">1.0° - 3.0°</td>
+                            <td>利於脫模，減少鰭片拉傷</td>
+                        </tr>
+                        <tr class="border-b border-gray-800">
+                            <td class="p-4">表面處理</td>
+                            <td class="p-4">陽極氧化 / 鈍化</td>
+                            <td>提升抗腐蝕性能與輻射散熱率</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 結尾 footer -->
+        <footer class="text-center text-gray-500 text-xs py-8 font-mono">
+          Created by Randy Chen  &copy;2026
+        </footer>
+    </main>
+
+    <script>
+        // 禁止右鍵選單
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        }, false);
+
+        // 禁止 F12 與相關開發者快捷鍵 (可選)
+        document.onkeydown = function(e) {
+            if (e.keyCode == 123) { // F12
+                return false;
+            }
+            if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) {
+                return false;
+            }
+            if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+                return false;
+            }
+        };
+    </script>
+</body>
+</html>
